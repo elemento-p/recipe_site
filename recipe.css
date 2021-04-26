@@ -26,9 +26,9 @@ div.category {
 
 div.content {
     background-color: white;
-    margin: 60px 10% 80px 10%;
-    padding: 0px 30px 30px 30px;
-    min-width: 350px;
+    margin: 40px 8px 40px 8px;
+    padding: 0px 8px 20px 8px;
+    /*min-width: 350px; */
     box-shadow: 0px 0px 10px 8px rgba(0, 0, 0, 0.1);
     overflow: visible;
 } 
@@ -70,20 +70,20 @@ table.info {
     width: 100%;
     color: white;
     background-color: #6C829DC0;    /* C0 is opacity of 69% */
-    height: 80px;
+    height: 50px;
 }
 
 table.info td {
     /* all of the table that has a info call with w/ td */
     text-align: center;
     vertical-align: top;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 table.info th {
     vertical-align: bottom;
     padding-bottom: 8px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 img.info {
@@ -95,7 +95,7 @@ img.info {
 }
 
 div.col{
-    width: 45%;
+    width: 100%;
     margin-top: 20px;
 }
 
@@ -109,12 +109,12 @@ div.col h2 {
 
 div.col1 {
     display: inline-block;
-    margin-right: 10%;
+    /* margin-right: 10%; */
 }
 
-div.col2 {
-    float: right;
-}
+ /* div.col2 { */
+   /* float: right; */
+/* }   */
 
 div.ingredients p {
     text-align: center;
@@ -153,3 +153,53 @@ table.instructions tr {
     height: 40px;  /* min and max won't work in table, but height acts like min-height */
 }
 
+/*Desktop style
+this section defines if site is on mobile or desktop, 768px is the breakpoint
+div.content above is setup to mobile screens and below is for desktop, margin and padding is different
+
+everything below overrides specific settings from above*/
+@media only screen and (min-width: 768px) {
+    div.content {
+        margin: 60px 10% 80px 10%;
+        padding: 0px 30px 30px 30px;
+        min-width: 350px; 
+        max-width: 650px;
+        /* deleted anything that is duplicate of div.content above */
+    }
+    
+    table.info {
+        height: 80px;
+    }
+    
+    table.info td {
+        /* all of the table that has a info call with w/ td */
+        font-size: 14px;
+    }
+    
+    table.info th {
+        font-size: 16px;
+    }
+
+    div.col{
+        width: 45%;
+        
+    }
+    
+    div.col1 {
+        margin-right: 10%;
+    }
+    
+    div.col2 {
+        float: right;
+    }
+    
+}
+
+/* very large screen */
+@media only screen and (min-width: 768px) {
+    div.content {
+        margin-left: auto;
+        margin-right: auto;
+        width: 650px;
+    }
+}
